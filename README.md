@@ -1,6 +1,18 @@
 # check_disruptive_mutations
 Python script which checks DNA sequences for disruptive mutations
 
+## Description
+This script checks sequences for disruptive mutations. It takes a FASTA file as input,
+this can contain a single sequence or multiple sequences.
+
+The script will output a file called `mutations.csv` which will contain information about any mutations that were found.
+
+The mutations file follows the below format:
+```csv
+position,sequence
+7-9,sequence_id
+```
+
 ## Setup
 Clone the repository:
 ```shell
@@ -32,7 +44,9 @@ Run the example to check the installation was successful:
 Check the output file contains the correct mutation:
 ```shell
 cat mutations.csv
+```
 
+```shell
 position,sequence
 7-9,has_a_mutation
 ```
