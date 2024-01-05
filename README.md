@@ -6,6 +6,7 @@ This script checks sequences for disruptive mutations. It takes a FASTA file as 
 this can contain a single sequence or multiple sequences.
 
 The script will output a file called `mutations.csv` which will contain information about any mutations that were found.
+If a mutation is found, it will be included in the mutations file. Otherwise there will be no information about the sequence in the mutations file.
 
 The mutations file follows the below format:
 ```csv
