@@ -10,7 +10,7 @@ class MutationChecker:
         self, sequence: str, sequence_id: str
     ) -> (bool, str):
         mutation = str()
-        stop_codons = {"TAA", "TGA", "TAG"}
+        stop_codons = {"taa", "tga", "tag"}
         complete = True
         if len(sequence) % 3 != 0:
             complete = False
@@ -33,7 +33,7 @@ class MutationChecker:
             fasta_sequences = SeqIO.parse(seq, "fasta")
             for fasta in fasta_sequences:
                 name = fasta.id
-                sequence = str(fasta.seq)
+                sequence = str(fasta.seq).lower()
                 disruptive_mutations = self.check_sequence_completeness(sequence, name)
                 if disruptive_mutations[1]:
                     disruptive_mutations = disruptive_mutations[1].split(" ")
